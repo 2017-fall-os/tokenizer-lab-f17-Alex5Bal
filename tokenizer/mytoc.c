@@ -38,7 +38,7 @@ int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector 
 		}
 	}
 
-	for (j = x + 1; stringIn[j] != '\0'; j++) /****Loop used to count the number of characters in the last token.****/
+	for (j = x + 1; stringIn[j] != '\0'; j++) /****Loop used to count the number of characters in the last token of the string.****/
 	{
 		numChars++;
 	}
@@ -49,32 +49,32 @@ int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector 
 	return ptrNumChars;
 }
 
-char** Mytoc(char* stringIn, char delim)
+char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space delimited tokens.****/
 {
 	int i, j = 0, x = 0, tokenCount = tokenCounter(stringIn);
-	char** tokenVecOut = (char**)calloc(tokenCount, sizeof(char*));
+	char** tokenVecOut = (char**)calloc(tokenCount, sizeof(char*)); /****Memory allocation to hold each token.****/
 	int* numCharacters = characterCounter(stringIn, tokenCount);
 
 	for (i = 0; i < tokenCount; i++)
 	{
-		tokenVecOut[i] = (char*)malloc((numCharacters[i] + 1) * sizeof(char));
+		tokenVecOut[i] = (char*)malloc((numCharacters[i] + 1) * sizeof(char)); /****Memory allocation to hold characters of tokens.****/
 	}
 
 	i = 0;
 
-	while (stringIn[x] != '\0')
+	while (stringIn[x] != '\0') /****Traverse the entire string.****/
 	{
-		if (stringIn[x] != delim)
+		if (stringIn[x] != delim) /****If the current character is not equal to the delimiter...****/
 		{
-			tokenVecOut[i][j] = stringIn[x];
+			tokenVecOut[i][j] = stringIn[x]; /****Copy the current character to the vector.****/
 			printf("i = %d | j = %d | x = %d\n", i, j, x);
 			j++;
 		}
-		if (stringIn[x] == delim)
+		if (stringIn[x] == delim) /****If the current character is equal to the delimiter...****/
 		{
-			tokenVecOut[i][j] = '\0';
+			tokenVecOut[i][j] = '\0'; /****Assign a null character to the end of the token.****/
 			i++;
-			j = 0;
+			j = 0; /****Reset j before continuing to next token.****/
 		}
 		x++;
 	}
