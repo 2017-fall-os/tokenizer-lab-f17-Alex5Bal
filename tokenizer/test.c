@@ -28,6 +28,7 @@ int main()
 			}
 
 		free(tokenVec);
+		fflush(stdin);
 	} while(string[0] != 'X');
 
 	return 0;
