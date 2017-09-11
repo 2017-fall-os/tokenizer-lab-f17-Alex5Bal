@@ -64,7 +64,7 @@ char** Mytoc(char* stringIn, char delim)
 
 	while (stringIn[x] != '\0')
 	{
-		if (stringIn[x] != delim)
+		if (stringIn[x] != delim || stringIn[x] != '\n')
 		{
 			tokenVecOut[i][j] = stringIn[x];
 			j++;
