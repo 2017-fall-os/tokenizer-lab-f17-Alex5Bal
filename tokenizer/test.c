@@ -17,8 +17,6 @@ int main()
 		char** tokenVec = Mytoc(string, ' ');
 		int* numCharacters = characterCounter(string, tokenCount);
 
-
-
 		printf("Main Token Count: %d\n", tokenCount);
 
 		for (i = 0; i < tokenCount; i++)
@@ -34,7 +32,7 @@ int main()
 		}
 
 		free(tokenVec);
-		//fflush(stdin);
+		fflush(stdin);
 	} while(string[0] != 'X');
 
 	return 0;
