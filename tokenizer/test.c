@@ -25,10 +25,8 @@ int main()
 			printf("Character count [%d]: %d\n", i, numCharacters[i]);
 			printf("[%d] : ", i);
 
-			for (j = 0; j < numCharacters[i]; j++)
-			{
-				printf("%c", tokenVec[i][j]);
-			}
+			printf("%s", tokenVec[i]);
+
 			printf("\n");
 			tokenCount = tokenCounter(string);
 		}
