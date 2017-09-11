@@ -17,19 +17,22 @@ int main()
 		int tokenCount = tokenCounter(string);
 		int* numCharacters = characterCounter(string, tokenCount);
 
+		printf("Main Token Count: %d\n", tokenCount);
+
 		for (i = 0; i < tokenCount; i++)
 		{
+			printf("Character count [%d]: %d\n", i, numCharacters[i]);
 			printf("[%d] : ", i);
+
 			for (j = 0; j < numCharacters[i]; j++)
 			{
 				printf("%c", tokenVec[i][j]);
 			}
 			printf("\n");
 		}
-		printf("\n");
 
 		free(tokenVec);
-		fflush(stdin);
+		//fflush(stdin);
 	} while(string[0] != 'X');
 
 	return 0;
