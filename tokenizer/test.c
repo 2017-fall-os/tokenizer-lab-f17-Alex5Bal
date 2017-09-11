@@ -19,7 +19,7 @@ int main()
 
 		printf("Main Token Count: %d\n", tokenCount);
 
-		for (i = 0; i < 2; i++)
+		for (i = 0; i < tokenCount; i++)
 		{
 			numCharacters = characterCounter(string, tokenCount);
 			printf("Character count [%d]: %d\n", i, numCharacters[i]);
@@ -34,7 +34,6 @@ int main()
 		}
 
 		free(tokenVec);
-		fflush(stdin);
 	} while(string[0] != 'X');
 
 	return 0;
