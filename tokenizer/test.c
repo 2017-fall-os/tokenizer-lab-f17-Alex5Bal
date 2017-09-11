@@ -19,7 +19,7 @@ int main()
 
 		printf("Main Token Count: %d\n", tokenCount);
 
-		for (i = 0; i < tokenCount; i++)
+		for (i = 0; i < 2; i++)
 		{
 			numCharacters = characterCounter(string, tokenCount);
 			printf("Character count [%d]: %d\n", i, numCharacters[i]);
