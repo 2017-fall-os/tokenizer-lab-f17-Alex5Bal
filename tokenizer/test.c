@@ -21,6 +21,7 @@ int main()
 
 		for (i = 0; i < tokenCount; i++)
 		{
+			numCharacters = characterCounter(string, tokenCount);
 			printf("Character count [%d]: %d\n", i, numCharacters[i]);
 			printf("[%d] : ", i);
 
