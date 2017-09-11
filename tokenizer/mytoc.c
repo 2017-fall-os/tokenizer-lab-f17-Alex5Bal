@@ -67,11 +67,12 @@ char** Mytoc(char* stringIn, char delim)
 		if (stringIn[x] != delim)
 		{
 			tokenVecOut[i][j] = stringIn[x];
+			printf("i = %d | j = %d | x = %d\n", i, j, x);
 			j++;
 		}
 		if (stringIn[x] == delim)
 		{
-			tokenVecOut[i][j] = '\0';
+			//tokenVecOut[i][j] = '\0';
 			i++;
 			j = 0;
 		}
