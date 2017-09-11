@@ -1,6 +1,6 @@
 all: test
 
-CFLAGS = -g -02
+CFLAGS = -g -O2
 
 test: test.o mytoc.o
 
