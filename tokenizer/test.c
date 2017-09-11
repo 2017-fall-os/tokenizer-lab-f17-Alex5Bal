@@ -14,8 +14,9 @@ int main()
 		fgets(string, 500, stdin);
 
 		int tokenCount = tokenCounter(string);
-		int* numCharacters = characterCounter(string, tokenCount);
 		char** tokenVec = Mytoc(string, ' ');
+		int* numCharacters = characterCounter(string, tokenCount);
+
 
 
 		printf("Main Token Count: %d\n", tokenCount);
