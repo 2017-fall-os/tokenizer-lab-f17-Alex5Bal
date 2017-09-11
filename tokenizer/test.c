@@ -30,6 +30,7 @@ int main()
 				printf("%c", tokenVec[i][j]);
 			}
 			printf("\n");
+			tokenCount = tokenCounter(string);
 		}
 
 		free(tokenVec);
