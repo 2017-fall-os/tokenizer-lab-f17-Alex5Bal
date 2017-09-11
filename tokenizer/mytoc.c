@@ -57,14 +57,14 @@ char** Mytoc(char* stringIn, char delim)
 
 	for (i = 0; i < tokenCount; i++)
 	{
-		tokenVecOut[i] = (char*)malloc(numCharacters[i] + 1 * sizeof(char));
+		tokenVecOut[i] = (char*)malloc(numCharacters[i] * sizeof(char));
 	}
 
 	i = 0;
 
-	while (stringIn[x] != '\0')
+	while (stringIn[x] != '\n')
 	{
-		if (stringIn[x] != delim || stringIn[x] != '\n')
+		if (stringIn[x] != delim)
 		{
 			tokenVecOut[i][j] = stringIn[x];
 			j++;
