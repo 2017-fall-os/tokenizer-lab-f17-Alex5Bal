@@ -24,8 +24,7 @@ int main()
 			{
 				printf("%c", tokenVec[i][j]);
 			}
-			printf("\n");
-			}
+		}
 
 		free(tokenVec);
 		fflush(stdin);

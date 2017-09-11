@@ -64,7 +64,7 @@ char** Mytoc(char* stringIn, char delim)
 
 	i = 0;
 
-	while (stringIn[x] != '\n')
+	while (stringIn[x] != '\0')
 	{
 		if (stringIn[x] != delim)
 		{
