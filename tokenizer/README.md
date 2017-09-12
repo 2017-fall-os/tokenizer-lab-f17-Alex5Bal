@@ -12,11 +12,7 @@
     - '$' signifies the program is ready to receive user input.
     - Program will keep prompting the user for input until 'X' is typed.
 ## Code Directory
-  ### mytoc.h: 
-  - header file containing the signatures of each function defined in mytoc.c.
-             - char** Mytoc(char* stringIn, char delim);
-             - int tokenCounter(char* stringIn);
-             - int* characterCounter(char* stringIn, int numTokens);
-  - mytoc.c: 
-  - test.c:
+  - mytoc.h: header file containing the signatures of each function defined in mytoc.c.
+  - mytoc.c: source file containing the functions used to implement a tokenizer. 
+  - test.c: source file used to receive input and print out the elements of the token vector.
 
