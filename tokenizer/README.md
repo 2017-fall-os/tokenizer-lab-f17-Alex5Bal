@@ -16,8 +16,8 @@
   - mytoc.c: source file containing the functions used to implement a tokenizer. 
   - test.c: source file used to receive input and print out the elements of the token vector.
 ## Issues
-  - Segmentation fault occurs when there are more than 2 tokens in EMACS.
-  - For debugging purposes, the same program was ran in Eclipse and it ran fine.
+  - Segmentation fault occurs when there are more than 2 tokens in the input string.
+  - For debugging purposes, the same program was ran in Eclipse and it ran up to specs.
   - Used gdb() to narrow down the error to line 79 of mytoc.c.
   - Problem was not fixed, not fully functional in EMACS.
 
