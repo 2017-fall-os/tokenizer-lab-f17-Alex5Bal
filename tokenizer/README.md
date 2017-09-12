@@ -5,9 +5,9 @@
 ## Functionality
   -
 ## Code Directory
-  -mytoc.h:
-  -mytoc.c:
-  -test.c
+  - mytoc.h:
+  - mytoc.c:
+  - test.c
 ## Libraries
-  -stdio.h:
-  -stdlib.h:
+  - stdio.h:
+  - stdlib.h:
