@@ -72,12 +72,12 @@ char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space d
 
 	i = 0;
 
-	while (stringIn[x+1] != '\0') /****Traverse the entire string.****/
+	while (stringIn[x] != '\n') /****Traverse the entire string.****/
 	{
 		if (stringIn[x] != delim) /****If the current character is not equal to the delimiter...****/
 		{
 			tokenVecOut[i][j] = stringIn[x]; /****Copy the current character to the vector.****/
-			//printf("i = %d | j = %d | x = %d\n", i, j, x);
+			printf("i = %d | j = %d | x = %d\n", i, j, x);
 			j++;
 		}
 		if (stringIn[x] == delim) /****If the current character is equal to the delimiter...****/
