@@ -52,7 +52,7 @@ int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector 
 char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space delimited tokens.****/
 {
 	int i, j = 0, x = 0, tokenCount = tokenCounter(stringIn);
-	char** tokenVecOut = (char**)calloc(tokenCount, sizeof(char*)); /****Memory allocation to hold each token.****/
+	char** tokenVecOut = (char**)calloc(tokenCount + 1, sizeof(char*)); /****Memory allocation to hold each token.****/
 	int* numCharacters = characterCounter(stringIn, tokenCount);
 
 	for (i = 0; i < tokenCount; i++)
