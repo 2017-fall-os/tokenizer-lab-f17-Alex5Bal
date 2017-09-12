@@ -37,6 +37,10 @@ int main()
 			tokenCount = tokenCounter(string);
 		}
 
+		for (i = 0; i < tokenCount; i++)
+		{
+			free(tokenVec[i]);
+		}
 		free(tokenVec); /****Frees the memory allocated to the token vector before moving on the the next input.****/
 	} while(string[0] != 'X'); /****Program runs input prompt until X is typed in.****/
 
