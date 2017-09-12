@@ -1,3 +1,13 @@
+/*
+ * Author: Alejandro Balderrama
+ * Class: Theory of Operating Systems
+ * Professor: Dr. Freudenthal
+ * Project: Tokenizer
+ *
+ * Description: The following program implements a string tokenizer. This implementation works by reading in an input string from the user,
+ * 			    partitioning its individual tokens by the ' ' character, then storing each token into a vector. The initial input is
+ * 			    printed line-by-line along with its vector position.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "mytoc.h"
@@ -52,7 +62,7 @@ int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector 
 char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space delimited tokens.****/
 {
 	int i, j = 0, x = 0, tokenCount = tokenCounter(stringIn);
-	char** tokenVecOut = (char**)calloc(3, sizeof(char*)); /****Memory allocation to hold each token.****/
+	char** tokenVecOut = (char**)calloc(tokenCount + 1, sizeof(char*)); /****Memory allocation to hold each token.****/
 	int* numCharacters = characterCounter(stringIn, tokenCount);
 
 	for (i = 0; i < tokenCount; i++)

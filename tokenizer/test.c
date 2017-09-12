@@ -1,3 +1,9 @@
+/*
+ * Author: Alejandro Balderrama
+ * Class: Theory of Operating Systems
+ * Professor: Dr. Freudenthal
+ * Project: Tokenizer
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "mytoc.h"
@@ -6,7 +12,7 @@ int main()
 {
 	const int size = 1000; /****Defines the max size of input.****/
 	char string[size]; /****String used to hold the input.****/
-	int i, j;
+	int i;
 
 	do
 	{
