@@ -6,9 +6,16 @@
    
 ## Functionality
   ### Creating Executable
+    - Make: $ make
+    - Run: $ ./test
   ### Program Interaction
+    - '$' signifies the program is ready to receive user input.
+    - Program will keep prompting the user for input until 'X' is typed.
 ## Code Directory
-  - mytoc.h:
-  - mytoc.c:
+  - mytoc.h: header file containing the signatures of each function defined in mytoc.c.
+             #### char** Mytoc(char* stringIn, char delim);
+             #### int tokenCounter(char* stringIn);
+             #### int* characterCounter(char* stringIn, int numTokens);
+  - mytoc.c: 
   - test.c:
 
