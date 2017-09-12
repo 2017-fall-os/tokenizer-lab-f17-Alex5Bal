@@ -5,8 +5,8 @@
    each resulting token is then inserted into a vector, which is then printed.
    
 ## Functionality
-  ##Creating Executable
-  ##Program Interaction
+  ### Creating Executable
+  ### Program Interaction
 ## Code Directory
   - mytoc.h:
   - mytoc.c:
