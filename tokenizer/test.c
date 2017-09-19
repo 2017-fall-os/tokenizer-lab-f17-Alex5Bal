@@ -16,7 +16,8 @@ int main()
 
 	do
 	{
-		printf("$ ");
+	        printf("%s\n", "hello");
+	        printf("$ ");
 		fgets(string, size, stdin); /****Reads the input to the string variable.****/
 
 		int tokenCount = tokenCounter(string);

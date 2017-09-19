@@ -77,7 +77,7 @@ char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space d
 		if (stringIn[x] != delim) /****If the current character is not equal to the delimiter...****/
 		{
 			tokenVecOut[i][j] = stringIn[x]; /****Copy the current character to the vector.****/
-			//printf("i = %d | j = %d | x = %d\n", i, j, x);
+			 printf("i = %d | j = %d | x = %d\n", i, j, x);
 			j++;
 		}
 		if (stringIn[x] == delim) /****If the current character is equal to the delimiter...****/
