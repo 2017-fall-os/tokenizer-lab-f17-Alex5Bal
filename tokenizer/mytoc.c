@@ -30,7 +30,7 @@ int tokenCounter(char* stringIn) /****Returns the number or tokens in a given st
 int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector containing the number of characters per token.****/
 {
 	int i, j, k = 0, x = 0, numChars = 0;
-	int numCharacters[numTokens]; /****In-method int array used to store the # of characters per token.****/
+	int*  numCharacters  = (int*)calloc(numTokens+1, sizeof(int)); /****In-method int array used to store the # of characters per token.****/
 	int* ptrNumChars; /****Pointer to int array to be returned.****/
 
 	for (i = 0; stringIn[i] != '\0'; i++) /****Loop to traverse the entire string.****/
