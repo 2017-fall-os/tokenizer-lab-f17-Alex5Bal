@@ -39,7 +39,6 @@ int main()
 
 		for (i = 0; i < tokenCount; i++)
 		{
-		  printf("free");
 		  free(tokenVec[i]);
 		}
 		free(tokenVec); /****Frees the memory allocated to the token vector before moving on the the next input.****/
