@@ -16,7 +16,6 @@ int main()
 
 	do
 	{
-	        printf("%s\n", "hello");
 	        printf("$ ");
 		fgets(string, size, stdin); /****Reads the input to the string variable.****/
 
