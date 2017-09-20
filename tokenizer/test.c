@@ -21,13 +21,13 @@ int main()
 
 		int tokenCount = tokenCounter(string);
 		char** tokenVec = Mytoc(string, ' '); /****Call to Mytoc() function to obtain a vector of tokens.****/
-		int* numCharacters = characterCounter(string, tokenCount);
+		int* numCharacters = characterCounter(string, tokenCount, ' ');
 
 		//printf("Main Token Count: %d\n", tokenCount);
 
 		for (i = 0; i < tokenCount; i++) /****Loop to print the contents of the token vector.****/
 		{
-			numCharacters = characterCounter(string, tokenCount);
+			//numCharacters = characterCounter(string, tokenCount);
 			//printf("Character count [%d]: %d\n", i, numCharacters[i]);
 			printf("[%d] : ", i);
 
