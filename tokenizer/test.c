@@ -21,7 +21,7 @@ int main()
 
 		int tokenCount = tokenCounter(string);
 		char** tokenVec = Mytoc(string, ' '); /****Call to Mytoc() function to obtain a vector of tokens.****/
-		int* numCharacters = characterCounter(string, tokenCount, ' ');
+		int* numCharacters = characterCounter(string, tokenCount);
 
 		//printf("Main Token Count: %d\n", tokenCount);
 
