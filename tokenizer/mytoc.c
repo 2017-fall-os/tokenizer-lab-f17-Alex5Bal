@@ -35,7 +35,7 @@ int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector 
 
 	for (i = 0; stringIn[i] != '\0'; i++) /****Loop to traverse the entire string.****/
 	{
-		if (stringIn[i] == delim) /****While traversing, if a space is encountered...****/
+		if (stringIn[i] == ' ') /****While traversing, if a space is encountered...****/
 		{
 			for (j = x; stringIn[j] != ' '; j++) /****Index j returns to the last location of x...****/
 			{									 /****x points to the beginning of the last token before the space was encountered.****/
