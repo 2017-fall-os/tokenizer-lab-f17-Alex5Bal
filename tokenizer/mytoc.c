@@ -27,7 +27,7 @@ int tokenCounter(char* stringIn) /****Returns the number or tokens in a given st
 	return numTokens;
 }
 
-int* characterCounter(char* stringIn, int numTokens, char delim) /****Returns an int vector containing the number of characters per token.****/
+int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector containing the number of characters per token.****/
 {
 	int i, j, k = 0, x = 0, numChars = 0;
 	int* numCharacters  = (int*)calloc(numTokens + 1, sizeof(int)); /****In-method int array used to store the # of characters per token.****/
@@ -63,7 +63,7 @@ char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space d
 {
 	int i, j = 0, x = 0, tokenCount = tokenCounter(stringIn);
 	char** tokenVecOut = (char**)calloc(tokenCount + 1, sizeof(char*)); /****Memory allocation to hold each token.****/
-	int* numCharacters = characterCounter(stringIn, tokenCount, delim);
+	int* numCharacters = characterCounter(stringIn, tokenCount);
 
 	for (i = 0; i < tokenCount; i++)
 	{
