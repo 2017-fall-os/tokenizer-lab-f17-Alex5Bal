@@ -5,44 +5,49 @@
  * Project: Tokenizer
 */
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include "mytoc.h"
 
+#define BUFFERSIZE 200 /****Defines the max size of buffer.****/
+
 int main()
 {
-	const int size = 1000; /****Defines the max size of input.****/
-	char string[size]; /****String used to hold the input.****/
 	int i;
 
-	do
+	while(1) /****Program runs input prompt until X is typed in.****/
 	{
-	        printf("$ ");
-		fgets(string, size, stdin); /****Reads the input to the string variable.****/
+		char *string = (char*) malloc(BUFFERSIZE); /****String used to hold the input.****/
 
-		int tokenCount = tokenCounter(string);
-		char** tokenVec = Mytoc(string, ' '); /****Call to Mytoc() function to obtain a vector of tokens.****/
-		int* numCharacters = characterCounter(string, tokenCount);
+		write(1, "$ ", 1);
+		read(0, string, BUFFERSIZE); /****Reads the input to the string variable.****/
 
-		//printf("Main Token Count: %d\n", tokenCount);
+		if(string[0] == 'X')
+			exit(0);
 
-		for (i = 0; i < tokenCount; i++) /****Loop to print the contents of the token vector.****/
+		else
 		{
-			//numCharacters = characterCounter(string, tokenCount);
-			//printf("Character count [%d]: %d\n", i, numCharacters[i]);
-			printf("[%d] : ", i);
+			int tokenCount = tokenCounter(string);
+			char** tokenVec = Mytoc(string, ' '); /****Call to Mytoc() function to obtain a vector of tokens.****/
 
-			printf("%s", tokenVec[i]);
+			for (i = 0; i < tokenCount; i++) /****Loop to print the contents of the token vector.****/
+			{
+				printf("[%d] : ", i);
 
-			printf("\n");
-			tokenCount = tokenCounter(string);
+				printf("%s", tokenVec[i]);
+
+				printf("\n");
+				tokenCount = tokenCounter(string);
+			}
+
+			for (i = 0; i < tokenCount; i++)
+			{
+				free(tokenVec[i]);
+			}
+			free(tokenVec); /****Frees the memory allocated to the token vector before moving on the the next input.****/
 		}
-
-		for (i = 0; i < tokenCount; i++)
-		{
-		  free(tokenVec[i]);
-		}
-		free(tokenVec); /****Frees the memory allocated to the token vector before moving on the the next input.****/
-	} while(string[0] != 'X'); /****Program runs input prompt until X is typed in.****/
+		free(string);
+	}
 
 	return 0;
 }
