@@ -41,7 +41,7 @@ int main()
 				tokenCount = tokenCounter(string, delim);
 			}
 
-			for (i = 0; i < tokenCount; i++)
+			for (i = 0; tokenVec[i] != '\0'; i++)
 			{
 				free(tokenVec[i]);
 			}
