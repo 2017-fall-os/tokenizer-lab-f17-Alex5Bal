@@ -14,6 +14,7 @@
 int main()
 {
 	int i;
+	char delim = ' ';
 
 	while(1) /****Program runs input prompt until X is typed in.****/
 	{
@@ -27,8 +28,8 @@ int main()
 
 		else
 		{
-			int tokenCount = tokenCounter(string);
-			char** tokenVec = Mytoc(string, ' '); /****Call to Mytoc() function to obtain a vector of tokens.****/
+			int tokenCount = tokenCounter(string, delim);
+			char** tokenVec = Mytoc(string, delim); /****Call to Mytoc() function to obtain a vector of tokens.****/
 
 			for (i = 0; i < tokenCount; i++) /****Loop to print the contents of the token vector.****/
 			{
@@ -37,7 +38,7 @@ int main()
 				printf("%s", tokenVec[i]);
 
 				printf("\n");
-				tokenCount = tokenCounter(string);
+				tokenCount = tokenCounter(string, delim);
 			}
 
 			for (i = 0; i < tokenCount; i++)
