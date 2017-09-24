@@ -15,10 +15,13 @@ int main()
 {
 	int i;
 	char delim = ' ';
+	char* string;
+	int tokenCount;
+	char** tokenVec;
 
 	while(1) /****Program runs input prompt until X is typed in.****/
 	{
-		char *string = (char*) malloc(BUFFERSIZE); /****String used to hold the input.****/
+		string = (char*) malloc(BUFFERSIZE); /****String used to hold the input.****/
 
 		write(1, "$ ", 1);
 		read(0, string, BUFFERSIZE); /****Reads the input to the string variable.****/
@@ -28,8 +31,8 @@ int main()
 
 		else
 		{
-			int tokenCount = tokenCounter(string, delim);
-			char** tokenVec = Mytoc(string, delim); /****Call to Mytoc() function to obtain a vector of tokens.****/
+			tokenCount = tokenCounter(string, delim);
+			tokenVec = Mytoc(string, delim); /****Call to Mytoc() function to obtain a vector of tokens.****/
 
 			for (i = 0; i < tokenCount; i++) /****Loop to print the contents of the token vector.****/
 			{
@@ -38,7 +41,7 @@ int main()
 				printf("%s", tokenVec[i]);
 
 				printf("\n");
-				tokenCount = tokenCounter(string, delim);
+				//tokenCount = tokenCounter(string, delim);
 			}
 
 			for (i = 0; tokenVec[i] != '\0'; i++)
