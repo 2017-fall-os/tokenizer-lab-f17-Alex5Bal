@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include "mytoc.h"
 
-#define BUFFERSIZE 200 /****Defines the max size of buffer.****/
+#define BUFFERSIZE 150 /****Defines the max size of buffer.****/
 
 int main()
 {
@@ -37,11 +37,8 @@ int main()
 			for (i = 0; i < tokenCount; i++) /****Loop to print the contents of the token vector.****/
 			{
 				printf("[%d] : ", i);
-
 				printf("%s", tokenVec[i]);
-
 				printf("\n");
-				//tokenCount = tokenCounter(string, delim);
 			}
 
 			for (i = 0; tokenVec[i] != '\0'; i++)
