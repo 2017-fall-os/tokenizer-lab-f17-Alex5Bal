@@ -12,13 +12,13 @@
 #include <stdlib.h>
 #include "mytoc.h"
 
-int tokenCounter(char* stringIn) /****Returns the number or tokens in a given string.****/
+int tokenCounter(char* stringIn, char delim) /****Returns the number or tokens in a given string.****/
 {
 	int i = 0, numTokens = 1;
 
 	while (stringIn[i] != '\0') /****Traverse the string until the null character is reached.****/
 	{
-		if (stringIn[i] == ' ') /****While traversing, if a space is encountered add 1 to the token counter.****/
+		if (stringIn[i] == delim) /****While traversing, if a space is encountered add 1 to the token counter.****/
 		{
 			numTokens++;
 		}
@@ -27,17 +27,16 @@ int tokenCounter(char* stringIn) /****Returns the number or tokens in a given st
 	return numTokens;
 }
 
-int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector containing the number of characters per token.****/
+int* characterCounter(char* stringIn, int numTokens, char delim) /****Returns an int vector containing the number of characters per token.****/
 {
 	int i, j, k = 0, x = 0, numChars = 0;
 	int* numCharacters  = (int*)calloc(numTokens + 1, sizeof(int)); /****In-method int array used to store the # of characters per token.****/
-	//int* ptrNumChars; /****Pointer to int array to be returned.****/
 
 	for (i = 0; stringIn[i] != '\0'; i++) /****Loop to traverse the entire string.****/
 	{
-		if (stringIn[i] == ' ') /****While traversing, if a space is encountered...****/
+		if (stringIn[i] == delim) /****While traversing, if a space is encountered...****/
 		{
-			for (j = x; stringIn[j] != ' '; j++) /****Index j returns to the last location of x...****/
+			for (j = x; stringIn[j] != delim; j++) /****Index j returns to the last location of x...****/
 			{									 /****x points to the beginning of the last token before the space was encountered.****/
 				numChars++;						 /****The # of characters is counted until the space is reached.****/
 			}
@@ -54,16 +53,14 @@ int* characterCounter(char* stringIn, int numTokens) /****Returns an int vector 
 	}
 	numCharacters[k] = numChars;
 
-	//ptrNumChars = numCharacters;
-
 	return numCharacters;
 }
 
 char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space delimited tokens.****/
 {
-	int i, j = 0, x = 0, tokenCount = tokenCounter(stringIn);
+	int i, j = 0, x = 0, tokenCount = tokenCounter(stringIn, delim);
 	char** tokenVecOut = (char**)calloc(tokenCount + 1, sizeof(char*)); /****Memory allocation to hold each token.****/
-	int* numCharacters = characterCounter(stringIn, tokenCount);
+	int* numCharacters = characterCounter(stringIn, tokenCount, delim);
 
 	for (i = 0; i < tokenCount; i++)
 	{
@@ -87,6 +84,8 @@ char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space d
 		}
 		x++;
 	}
+
+	//tokenVecOut[tokenCount + 1][0] = '\0';
 
 	return tokenVecOut;
 
